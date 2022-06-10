@@ -19,4 +19,6 @@ jobs:
           # package-name: release-please-test
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-          extra-files: version/crystal/shard.yml
+          extra-files: |
+            version/crystal/shard.yml
+            version/crystal/src/version.cr
