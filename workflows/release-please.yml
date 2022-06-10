@@ -1,0 +1,24 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+      # - release
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          # default-branch: release
+          release-type: simple
+          # package-name: release-please-test
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          extra-files:
+            - version/crystal/shard.yml
+            - version/crystal/src/version.cr
